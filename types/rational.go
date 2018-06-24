@@ -92,6 +92,7 @@ func (r Rat) Quo(r2 Rat) Rat    { return Rat{*new(big.Rat).Quo(&(r.Rat), &(r2.Ra
 func (r Rat) Add(r2 Rat) Rat    { return Rat{*new(big.Rat).Add(&(r.Rat), &(r2.Rat))} } // Add - addition
 func (r Rat) Sub(r2 Rat) Rat    { return Rat{*new(big.Rat).Sub(&(r.Rat), &(r2.Rat))} } // Sub - subtraction
 func (r Rat) String() string    { return fmt.Sprintf("%v/%v", r.Num(), r.Denom()) }
+func (r Rat) FloatString() string { return fmt.Sprintf("%v", r.Rat.FloatString(10)) }
 
 var (
 	zero  = big.NewInt(0)
